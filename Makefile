@@ -1,10 +1,4 @@
-install: install-deps
-	npx simple-git-hooks
-
-run:
-	bin/nodejs-package.js 10
-
-install-deps:
+install:
 	npm ci
 
 test:
@@ -17,12 +11,15 @@ lint:
 	npx eslint .	
 
 fix:
-		npx eslint . --fix
+	npx eslint . --fix
 
 publish:
 	npm publish --dry-run
 
-.PHONY: test
+run:
+	gendiff  './__fixtures__/file1.yml' './__fixtures__/file2.yml' 
 
-runingTest:
-	NODE_OPTIONS=--experimental-vm-modules npx jest
+run2:
+	gendiff './__fixtures__/file1.json' './__fixtures__/file2.json' 
+
+.PHONY: test
