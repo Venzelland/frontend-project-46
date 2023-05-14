@@ -14,9 +14,15 @@ test-coverage:
 	npm test -- --coverage --coverageProvider=v8
 
 lint:
-	npx eslint .
+	npx eslint .	
+
+fix:
+		npx eslint . --fix
 
 publish:
-	npm publish
+	npm publish --dry-run
 
 .PHONY: test
+
+runingTest:
+	NODE_OPTIONS=--experimental-vm-modules npx jest
