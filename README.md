@@ -41,6 +41,6 @@ Options:
 ```
 
 # Example:
+[![asciicast](https://asciinema.org/a/vT9ect2vacbaMiKhpmd2nCr5j.png)](https://asciinema.org/a/vT9ect2vacbaMiKhpmd2nCr5j)
 
   ## _Simple:_
-https://asciinema.org/a/vT9ect2vacbaMiKhpmd2nCr5j
