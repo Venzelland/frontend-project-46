@@ -12,14 +12,11 @@ lint:
 
 fix:
 	npx eslint . --fix
-
+	
 publish:
 	npm publish --dry-run
 
 run:
-	gendiff  './__fixtures__/file1.yml' './__fixtures__/file2.yml' 
-
-run2:
-	gendiff '../__fixtures__/file1.json' '../__fixtures__/file2.json' 
+	node bin/gendiff '__fixtures__/file1.json' '__fixtures__/file2.json'
 
 .PHONY: test

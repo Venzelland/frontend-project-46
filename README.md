@@ -43,3 +43,4 @@ Options:
 # Example:
 
   ## _Simple:_
+https://asciinema.org/a/vT9ect2vacbaMiKhpmd2nCr5j

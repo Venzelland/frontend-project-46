@@ -1,32 +1,21 @@
-import { cwd } from 'node:process';
+import path from 'path';
 import fs from 'fs';
-import { resolve, extname } from 'node:path';
-import parsesFile from './parsers.js';
-import getTree from './getTree.js';
-import formatter from './formatters/index.js';
+import compareData from './compareData.js';
+import format from './formatters/index.js';
+import parse from './parsers.js';
 
-const getFullFilePath = (filepath) => resolve(cwd(), filepath);
+const getAbsolutPath = (filepath) => path.resolve(process.cwd(), filepath);
+const readFile = (filepath) => fs.readFileSync(getAbsolutPath(filepath), 'utf-8');
+const getFormat = (filename) => filename.split('.')[1];
 
-const getFormat = (filepath) => extname(filepath).substring(1);
+const genDiff = (file1, file2, formatName = 'stylish') => {
+  const content1 = readFile(file1);
+  const content2 = readFile(file2);
+  const data1 = parse(content1, getFormat(file1));
+  const data2 = parse(content2, getFormat(file2));
+  const tree = compareData(data1, data2);
 
-const readFile = (filePath) => fs.readFileSync(filePath, 'utf-8');
-
-const gendiff = (filepath1, filepath2, formatName = 'stylish') => {
-  const pathFile1 = getFullFilePath(filepath1);
-  const pathFile2 = getFullFilePath(filepath2);
-
-  const dataFile1 = readFile(pathFile1);
-  const dataFile2 = readFile(pathFile2);
-
-  const formatFile1 = getFormat(filepath1);
-  const formatFile2 = getFormat(filepath2);
-
-  const informationDiff = getTree(
-    parsesFile(dataFile1, formatFile1),
-    parsesFile(dataFile2, formatFile2),
-  );
-
-  return formatter(informationDiff, formatName);
+  return format(tree, formatName);
 };
 
-export default gendiff;
+export default genDiff;
