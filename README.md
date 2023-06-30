@@ -1,6 +1,8 @@
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/Venzelland/frontend-project-46/workflows/hexlet-check/badge.svg)](https://github.com/Venzelland/frontend-project-46/actions)
 
+b9f8b1c8a6082fc21261c74916ee5f0a1ebf00dd645015374f75f36d9543c896
+
 # Difference Generator
 
 ## **Description:**
