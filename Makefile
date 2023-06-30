@@ -1,22 +1,10 @@
 install:
-	npm ci
-
-test:
-	npm test
-
-test-coverage:
-	npm test -- --coverage --coverageProvider=v8
-
+		npm ci
 lint:
-	npx eslint .	
-
-fix:
-	npx eslint . --fix
-	
-publish:
-	npm publish --dry-run
-
-run:
-	node bin/gendiff '__fixtures__/file1.json' '__fixtures__/file2.json'
-
-.PHONY: test
+		npx eslint .
+test:
+		npx jest
+test-coverage:
+		npx jest --coverage
+link:
+		sudo npm link

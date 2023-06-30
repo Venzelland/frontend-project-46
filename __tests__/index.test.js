@@ -11,8 +11,8 @@ const getFixturePath = (filename) => path.join(__dirname, '..', '__fixtures__', 
 const readFile = (filename) => readFileSync(getFixturePath(filename), 'utf-8');
 
 const fileOutput = readFile('fileOutput.txt');
-const file1 = './__fixtures__/file1.json';
-const file2 = './__fixtures__/file2.json';
+const file1 = '__fixtures__/file1.json';
+const file2 = '__fixtures__/file2.json';
 
 test('plan using', () => {
   expect(gendiff(file1, file2)).toEqual(fileOutput);
