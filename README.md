@@ -1,7 +1,7 @@
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/Venzelland/frontend-project-46/workflows/hexlet-check/badge.svg)](https://github.com/Venzelland/frontend-project-46/actions)
 
-<a href="https://codeclimate.com/github/Venzelland/frontend-project-46"><img src="https://codeclimate.com/github/Venzelland/frontend-project-46" /></a>
+<a href="https://codeclimate.com/github/Venzelland/frontend-project-46/maintainability"><img src="https://api.codeclimate.com/v1/badges/b9f8b1c8a6082fc21261c74916ee5f0a1ebf00dd645015374f75f36d9543c896/maintainability" /></a>
 
 <a href="https://codeclimate.com/repos/649e79e6aa7cac00a7d64a9b/settings/test_reporter"><img src="https://codeclimate.com/repos/649e79e6aa7cac00a7d64a9b/settings/test_reporter" /></a>
 
